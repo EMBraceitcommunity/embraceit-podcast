@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EM-Brace It Community Podcast | Real Talk, Real Life, Real Support</title>
+    <meta name="description" content="Join Chaplain Bracey on EM-Brace It Community Podcast - Live every Sunday at 6PM Central. Real conversations about faith, community challenges, and hope.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header/Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero .tagline {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .hero-image-container {
+            max-width: 900px;
+            margin: 40px auto 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Navigation */
+        nav {
+            background: #1e293b;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #1e3a8a;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.8em;
+            color: #1e40af;
+            margin-bottom: 15px;
+        }
+
+        /* Logo Banner */
+        .logo-banner {
+            background: white;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo-banner img {
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .about-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .about-highlights {
+            background: #f0f9ff;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .about-highlights ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .about-highlights li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .about-highlights li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /* Branding Card */
+        .chaplain-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            margin: 50px auto;
+            max-width: 600px;
+        }
+
+        .chaplain-card img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto 20px;
+        }
+
+        .chaplain-card h4 {
+            font-size: 1.3em;
+            color: #1e3a8a;
+            margin-top: 15px;
+        }
+
+        .chaplain-card p {
+            color: #666;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* Episodes Section */
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .episode-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .episode-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        .episode-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .episode-card .episode-description {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .episode-card .episode-topics {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #475569;
+        }
+
+        /* Mission Section */
+        .mission {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .mission h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .mission-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .mission-point {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .mission-point h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .mission-point p {
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+
+        /* Host Section */
+        .host-section {
+            background: #f8fafc;
+            padding: 60px 40px;
+            border-radius: 15px;
+        }
+
+        .host-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .host-bio {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .host-credentials {
+            margin-top: 20px;
+        }
+
+        .credential-item {
+            padding: 15px;
+            background: #f0f9ff;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 3px solid #3b82f6;
+        }
+
+        /* Subscribe Section */
+        .subscribe {
+            background: #1e293b;
+            color: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .subscribe h2 {
+            color: white;
+        }
+
+        .subscribe-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .subscribe-button {
+            background: #3b82f6;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+            display: inline-block;
+        }
+
+        .subscribe-button:hover {
+            background: #2563eb;
+            transform: scale(1.05);
+        }
+
+        /* QR Code Section */
+        .qr-support {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .qr-support img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+            border: 3px solid #FFDD00;
+            border-radius: 10px;
+            padding: 15px;
+            background: white;
+        }
+
+        .qr-support h3 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .qr-support p {
+            text-align: center;
+            color: #666;
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            padding: 40px;
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+
+        .contact-info {
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+
+        .social-box {
+            margin-top: 30px;
+            padding: 25px;
+            background: #f0f9ff;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero .tagline {
+                font-size: 1.2em;
+            }
+
+            .about-content,
+            .host-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+        }
+
+        /* Accent Elements */
+        .accent-text {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+
+        .divider {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #10b981);
+            margin: 30px auto;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>EM-Brace It Community Podcast</h1>
+        <p class="tagline">Real Talk. Real Life. Real Support.</p>
+        
+        <!-- Main Promotional Image -->
+        <div class="hero-image-container">
+            <!-- REPLACE THIS src WITH YOUR IMAGE 1 (Let's Talk About It promotional image) -->
+            <img src="podcast-hero.jpg" alt="EM-Brace It Community Podcast - Let's Talk About It - Live Each Sunday at 6:00 PM Central with Chaplain Bracey Goodwin, IV">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#episodes">Recent Episodes</a></li>
+            <li><a href="#mission">Our Mission</a></li>
+            <li><a href="#host">Your Host</a></li>
+            <li><a href="#subscribe">Subscribe</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About the Podcast</h2>
+            <div class="divider"></div>
+            
+            <!-- Podcast Logo -->
+            <div class="logo-banner">
+                <!-- REPLACE THIS src WITH YOUR IMAGE 4 (simple logo on bus stop) -->
+                <img src="podcast-logo.jpg" alt="em-brace it community podcast logo">
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>EM-Brace It Community is more than a podcast—it's a lifeline for real people facing real challenges. Hosted by Chaplain Bracey, an ordained minister with over 20 years of service and a U.S. Air Force veteran, this podcast brings together faith, practical wisdom, and community support to address the issues that matter most.</p>
+                    <p style="margin-top: 20px;">Whether you're navigating economic hardship, seeking support during difficult times, or looking for inspiration to overcome obstacles, EM-Brace It Community meets you where you are with compassion, honesty, and hope.</p>
+                    <p style="margin-top: 20px;"><strong>🔴 LIVE every Sunday at 6:00 PM Central</strong> • New episodes each week</p>
+                </div>
+                <div class="about-highlights">
+                    <h3>What We Offer</h3>
+                    <ul>
+                        <li>Honest conversations about community challenges</li>
+                        <li>Faith-based guidance and spiritual support</li>
+                        <li>Practical resources for crisis situations</li>
+                        <li>Mental health awareness and suicide prevention</li>
+                        <li>Veteran advocacy and support</li>
+                        <li>Economic crisis navigation</li>
+                        <li>Stories of resilience and redemption</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Chaplain Branding Card -->
+            <div class="chaplain-card">
+                <!-- REPLACE THIS src WITH YOUR IMAGE 2 (elegant chaplain text with flowing design) -->
+                <img src="chaplain-brand.jpg" alt="Chaplain Bracey Goodwin IV - Digitally Created">
+                <h4>Chaplain Bracey Goodwin, IV</h4>
+                <p>Erancon Meor Elleaes</p>
+            </div>
+        </section>
+
+        <!-- Recent Episodes Section -->
+        <section id="episodes">
+            <h2>Recent Episodes</h2>
+            <div class="divider"></div>
+            <div class="episodes-grid">
+                <div class="episode-card">
+                    <h3>SNAP Benefits Crisis</h3>
+                    <p class="episode-description">Addressing the impact of emergency SNAP benefit reductions on families and communities. Learn about available resources, practical strategies for navigating food insecurity, and how to support those affected.</p>
+                    <div class="episode-topics">
+                        <strong>Topics:</strong> Economic hardship, Community resources, Food security, Advocacy
+                    </div>
+                </div>
+
+                <div class="episode-card">
+                    <h3>Breaking the Silence on Suicide</h3>
+                    <p class="episode-description">A crucial conversation about mental health, warning signs, and how communities can come together to prevent suicide. Resources, hope, and practical steps for those struggling or supporting someone in crisis.</p>
+                    <div class="episode-topics">
+                        <strong>Topics:</strong> Mental health, Suicide prevention, Crisis support, Community action
+                    </div>
+                </div>
+
+                <div class="episode-card">
+                    <h3>Veterans Day: Honoring Service</h3>
+                    <p class="episode-description">Commemorating Veterans Day with prayers, reflections, and education about the Buffalo Soldiers and the importance of remembering those who served. Practical ways to support veterans in your community.</p>
+                    <div class="episode-topics">
+                        <strong>Topics:</strong> Military service, Veteran advocacy, Buffalo Soldiers, Honor and remembrance
+                    </div>
+                </div>
+
+                <div class="episode-card">
+                    <h3>Faith Through Trauma</h3>
+                    <p class="episode-description">Drawing from personal experience and ministry work, exploring how faith can sustain us through life's darkest moments. Stories of transformation, healing, and finding purpose in pain.</p>
+                    <div class="episode-topics">
+                        <strong>Topics:</strong> Trauma recovery, Faith journey, Redemption, Personal testimony
+                    </div>
+                </div>
+
+                <div class="episode-card">
+                    <h3>Workplace Safety Meets Spiritual Wellness</h3>
+                    <p class="episode-description">A unique perspective on safety that integrates physical, psychological, and spiritual wellbeing. Creating safer workplaces and healthier communities through holistic approaches.</p>
+                    <div class="episode-topics">
+                        <strong>Topics:</strong> Occupational safety, Mental health, Spiritual wellness, Work-life integration
+                    </div>
+                </div>
+
+                <div class="episode-card">
+                    <h3>Community in Crisis: Finding Hope</h3>
+                    <p class="episode-description">When communities face collective challenges—whether economic, social, or spiritual—how do we find hope and support one another? Practical guidance for building resilient communities.</p>
+                    <div class="episode-topics">
+                        <strong>Topics:</strong> Community building, Crisis management, Hope, Resilience
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section id="mission">
+            <div class="mission">
+                <h2>Our Mission</h2>
+                <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto;">To provide a safe space for honest conversations about life's challenges, offering spiritual guidance, practical support, and community connection for those who need it most.</p>
+                <div class="mission-points">
+                    <div class="mission-point">
+                        <h3>Support</h3>
+                        <p>Connecting people with resources, guidance, and community support during difficult times.</p>
+                    </div>
+                    <div class="mission-point">
+                        <h3>Empower</h3>
+                        <p>Equipping listeners with practical tools and spiritual strength to overcome challenges.</p>
+                    </div>
+                    <div class="mission-point">
+                        <h3>Inspire</h3>
+                        <p>Sharing stories of resilience, redemption, and transformation that give hope.</p>
+                    </div>
+                    <div class="mission-point">
+                        <h3>Connect</h3>
+                        <p>Building a community where no one faces their struggles alone.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Host Section -->
+        <section id="host">
+            <h2>Meet Your Host</h2>
+            <div class="divider"></div>
+            <div class="host-section">
+                <div class="host-content">
+                    <div class="host-bio">
+                        <h3>Chaplain Bracey Goodwin, IV</h3>
+                        <p style="margin: 20px 0; line-height: 1.8;">Chaplain Bracey brings a unique perspective shaped by service, struggle, and faith. As an ordained chaplain, U.S. Air Force veteran, and safety professional with over 10 years of experience, he understands both the practical and spiritual dimensions of life's challenges.</p>
+                        <p style="line-height: 1.8;">Author of the memoir <em>"Why Didn't I Listen? A Journey Through Trauma, Faith, and Redemption,"</em> Bracey shares his own story of transformation to help others find hope and healing.</p>
+                    </div>
+                    <div class="host-credentials">
+                        <div class="credential-item">
+                            <strong>Ordained Chaplain</strong><br>
+                            Serving at Mt. Rose Church in Dallas and with the Bexar County Buffalo Soldiers Association
+                        </div>
+                        <div class="credential-item">
+                            <strong>Military Service</strong><br>
+                            U.S. Air Force Veteran (1997-2000), Air Crew Life Support Specialist
+                        </div>
+                        <div class="credential-item">
+                            <strong>Education</strong><br>
+                            Master of Science in Sports Chaplaincy, Liberty University
+                        </div>
+                        <div class="credential-item">
+                            <strong>Professional Experience</strong><br>
+                            Occupational Health and Safety Officer, City of Dallas Parks and Recreation Department
+                        </div>
+                        <div class="credential-item">
+                            <strong>Author & Speaker</strong><br>
+                            Published memoir and developing keynote presentations on holistic workplace safety
+                        </div>
+                        <div class="credential-item">
+                            <strong>Community Advocate</strong><br>
+                            Focused on veteran advocacy, mental health awareness, and community support
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscribe Section -->
+        <section id="subscribe">
+            <div class="subscribe">
+                <h2>Subscribe & Listen</h2>
+                <p style="font-size: 1.2em; margin: 20px 0;">Don't miss an episode! Subscribe on your favorite podcast platform.</p>
+                <div class="subscribe-buttons">
+                    <a href="#" class="subscribe-button">Apple Podcasts</a>
+                    <a href="#" class="subscribe-button">Spotify</a>
+                    <a href="#" class="subscribe-button">Google Podcasts</a>
+                    <a href="#" class="subscribe-button">YouTube</a>
+                    <a href="#" class="subscribe-button">RSS Feed</a>
+                </div>
+                <p style="margin-top: 40px; font-size: 1.1em;">🔴 <strong>LIVE Every Sunday at 6:00 PM Central</strong> • New episodes each week</p>
+                <p style="margin-top: 15px;">Join the conversation and embrace the community!</p>
+                
+                <!-- Support Section with QR Code -->
+                <div style="margin-top: 50px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.2);">
+                    <h3 style="color: white; font-size: 1.8em; margin-bottom: 15px;">Support the Podcast</h3>
+                    <p style="font-size: 1.1em; margin-bottom: 25px;">Your support helps us continue providing free content and resources to those who need it most.</p>
+                    <a href="https://buymeacoffee.com/Embraceit" target="_blank" class="subscribe-button" style="background: #FFDD00; color: #000; font-weight: 700;">☕ Buy Me a Coffee</a>
+                    
+                    <!-- QR Code -->
+                    <div class="qr-support">
+                        <h3>Scan to Support</h3>
+                        <p style="margin-bottom: 20px;">Use your phone's camera to scan and visit our Buy Me a Coffee page</p>
+                        <!-- REPLACE THIS src WITH YOUR IMAGE 3 (QR code) -->
+                        <img src="qr-code.jpg" alt="Buy Me a Coffee QR Code - Support EM-Brace It Community Podcast">
+                        <p style="margin-top: 15px; font-size: 0.95em;"><strong>buymeacoffee.com/Embraceit</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="contact">
+                <h2>Get In Touch</h2>
+                <div class="divider"></div>
+                <p style="font-size: 1.1em; max-width: 600px; margin: 20px auto;"><strong>"How can we pray for you?"</strong></p>
+                <p style="font-size: 1.05em; max-width: 600px; margin: 10px auto;">Have a story to share? Topic suggestion? Need support? We'd love to hear from you.</p>
+                
+                <div class="contact-info">
+                    <p style="margin: 15px 0;"><strong>📧 Email:</strong> <a href="/cdn-cgi/l/email-protection#a9ccc4cbdbc8caccc0ddcac6c4c4dcc7c0ddd0d9c6cdcac8dadde9cec4c8c0c587cac6c4" class="accent-text" style="text-decoration: none;"><span class="__cf_email__" data-cfemail="63060e01110200060a17000c0e0e160d0a171a130c070002101723040e020a0f4d000c0e">[email&#160;protected]</span></a></p>
+                    <p style="margin: 15px 0;"><strong>📞 Chaplain Prayer Line:</strong> <span class="accent-text">(214) 295-5628</span></p>
+                    <p style="margin: 15px 0;"><strong>📅 Live Shows:</strong> Every Sunday at 6:00 PM Central</p>
+                    <p style="margin: 15px 0;"><strong>🎙️ New Episodes:</strong> Released Weekly</p>
+                    
+                    <div class="social-box">
+                        <p style="font-size: 0.95em; color: #1e3a8a; margin-bottom: 10px;"><strong>Connect With Us:</strong></p>
+                        <p style="font-size: 1.1em;">📱 Instagram • 📘 Facebook • 📺 YouTube • 🎵 TikTok</p>
+                    </div>
+                    
+                    <p style="margin-top: 30px; font-size: 1.1em; font-style: italic; color: #1e3a8a;">"You are not alone. We're here to walk with you."</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>EM-Brace It Community Podcast</strong></p>
+        <p>Hosted by Chaplain Bracey Goodwin, IV</p>
+        <p style="margin-top: 20px;">Live Every Sunday • 6:00 PM Central • New Episodes Weekly</p>
+        <p style="margin-top: 20px; font-size: 0.9em;">&copy; 2025 EM-Brace It Community. All rights reserved.</p>
+        <p style="margin-top: 20px; font-size: 0.85em; opacity: 0.8;">
+            <strong>Crisis Resources:</strong> National Suicide Prevention Lifeline: 988 | Crisis Text Line: Text HOME to 741741
+        </p>
+    </footer>
+
+    <!-- 
+    IMAGE REPLACEMENT GUIDE:
+    
+    To add your images, replace these placeholder filenames with your actual image files:
+    
+    1. podcast-hero.jpg - Your main "Let's Talk About It" promotional image (Image 1)
+    2. chaplain-brand.jpg - The elegant "Chaplain Bracey Goodwin IV" design (Image 2)
+    3. qr-code.jpg - Your Buy Me a Coffee QR code (Image 3)
+    4. podcast-logo.jpg - Your simple podcast logo (Imag
